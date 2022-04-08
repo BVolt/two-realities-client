@@ -1,0 +1,10 @@
+<form ngNativeValidate>
+    <div class="mb-3">
+        <label for="userId" class="form-label">UserName</label>
+        <input class="form-control" type="text" name="userId" [(ngModel)]="user.userId" required>
+        <label for="password" class="form-label">Password</label>
+        <input class="form-control" type="password" name="password" [(ngModel)]="user.password" required>
+    </div>
+    <button type="submit" (click)="loginUser()" class="btn btn-primary">Login</button>
+</form>
+

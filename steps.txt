@@ -1,0 +1,14 @@
+back{
+    Push to git and deploy with azure
+}
+
+extras{
+    conditional load icon waiting for on init --update form --home
+    update profile / delete profile
+    multiple pages
+    searching
+    chatting
+}
+
+finish
+

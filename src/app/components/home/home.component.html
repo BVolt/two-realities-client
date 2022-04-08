@@ -1,0 +1,70 @@
+<div>
+  <button  *ngIf="!userExists" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" id="register-open">
+      Register
+  </button>
+  
+  <button *ngIf="!userExists" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#loginModal" id="login-open">
+    Login
+  </button>
+
+</div>
+<a class="nav-link active" aria-current="page" (click)="goToFavorites()">Contribute Your Favorite Games</a>
+<table class="table table-striped" >
+  <thead>
+    <tr>
+      <td>Game</td>
+      <td>Released</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let pair of favoritesArray">
+    <h6>{{pair.userId}}</h6>
+    <tr>
+      <td>{{pair.titleOne}}</td>
+      <td>{{pair.yearOne}}</td>
+    </tr>
+    <tr>
+      <td>{{pair.titleTwo}}</td>
+      <td>{{pair.yearTwo}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="login-close"></button>
+        </div>
+        <div class="modal-body">
+          <app-login></app-login>
+        </div>
+        <div class="modal-footer">
+          <a (click)="openRegister()">Dont have an account?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="register-close"></button>
+        </div>
+        <div class="modal-body">
+          <app-register></app-register>
+        </div>
+        <div class="modal-footer">
+          <a (click)="openLogIn()">Already have an account?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  

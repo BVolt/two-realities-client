@@ -1,0 +1,16 @@
+a {
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
+}
+
+.modal-footer{
+    justify-content: center;
+    a{
+        color: #0d6efd;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

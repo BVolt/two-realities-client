@@ -1,0 +1,20 @@
+<form ngNativeValidate>
+    <div class="mb-3">
+        <label for="userId" class="form-label">UserName</label>
+        <input class="form-control" type="text" name="userId" [(ngModel)]="user.userId" required>
+        <label for="password" class="form-label">Password</label>
+        <input class="form-control" type="password" name="password" [(ngModel)]="user.password" required>
+        <label for="password" class="form-label">Password Confirmation</label>
+        <input class="form-control" type="password" name="password" [(ngModel)]="passwordCheck" required>
+    </div>
+    <button (click)="registerUser()" class="btn btn-primary">Register</button>
+</form>
+<div class="alert alert-danger" role="alert" *ngIf="!passMatch">
+    Passwords do not match
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="noId">
+    User Name is required
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="nameTaken">
+    User Name is taken
+  </div>
